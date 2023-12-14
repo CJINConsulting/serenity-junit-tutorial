@@ -1,0 +1,27 @@
+name: build_by_api
+run-name: Build by API from user @${{ github.actor }}
+
+on:
+  repository_dispatch:
+    types: api-build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      -  uses: actions/checkout@v3.3.0
+
+      - name: run unit test
+        run: mvn test
+
+      - name: build with maven
+        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
+
+      - name: rename artefact
+        run: mv ./target/*serenity-junit-starter*.war "./target/${{ github.event.client_payload.artifactName }}.war"
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: ${{ github.event.client_payload.artifactName }}.war
+          path: ./target/*.war
