@@ -37,14 +37,6 @@ public class CartPage extends PageObject {
         return $(CART_BADGE).getText();
     }
 
-    public ListOfWebElementFacades getCartItems() {
-        return $$(CART_ITEM);
-    }
-
-    public ListOfWebElementFacades getCartItemPrices() {
-        return $$(CART_ITEM);
-    }
-
     public List<CartItem> items() {
         List<CartItem> cartItems = new ArrayList<>();
         for(WebElementFacade cartItemElement : cartItemElements) {

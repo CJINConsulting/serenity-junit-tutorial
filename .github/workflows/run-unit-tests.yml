@@ -1,0 +1,17 @@
+name: run unit tests for features
+
+on:
+  push:
+    branches:
+      'feature/*'
+
+jobs:
+  run-unit-test:
+    runs-on: ubuntu
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@3.3.0
+
+      - name: run unit test
+        run: mvn serenity:aggregate
