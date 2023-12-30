@@ -8,7 +8,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import seleniumeasy.pageobjects.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class WhenInteractingWithInputForms {
+public class NavigatingThroughActions {
 
     @Managed(driver = "chrome")
     WebDriver driver;
