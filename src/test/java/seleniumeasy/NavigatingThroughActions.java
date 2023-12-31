@@ -1,11 +1,13 @@
 package seleniumeasy;
 
 import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
+import seleniumeasy.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
 
 import java.util.Arrays;
@@ -23,6 +25,9 @@ public class NavigatingThroughActions {
 
     @Managed(driver = "chrome")
     WebDriver driver;
+
+    @Steps
+    NavigateActions navigate;
 
     SingleInputFieldForm singleInputFieldForm;
 
@@ -44,7 +49,8 @@ public class NavigatingThroughActions {
 
     @Test
     public void basicForms() {
-        singleInputFieldForm.open();
+
+        navigate.to(FormPages.SingleInputFieldForm);
 
         singleInputFieldForm.enterMessage("Hi there!");
         singleInputFieldForm.showMessage();
@@ -62,7 +68,7 @@ public class NavigatingThroughActions {
     @Test
     public void basicFormsWithMultipleFields() {
 
-        twoInputFieldForm.open();
+        navigate.to(FormPages.TwoInputFieldForm);
 
         twoInputFieldForm.enterA("2");
         twoInputFieldForm.enterB("3");
@@ -79,7 +85,8 @@ public class NavigatingThroughActions {
      */
     @Test
     public void singleCheckbox() {
-        checkboxForm.open();
+        navigate.to(FormPages.CheckboxForm);
+
         assertThat(checkboxForm.getCheckboxWithLabel("Click on this check box").isSelected()).isFalse();
         checkboxForm.setAgeSelected();
 
@@ -92,7 +99,7 @@ public class NavigatingThroughActions {
 
     @Test
     public void multipleCheckboxes() {
-        checkboxForm.open();
+        navigate.to(FormPages.CheckboxForm);
 
         assertThat(ALL_THE_OPTIONS).allMatch(
                 option -> !checkboxForm.optionIsCheckedFor(option)
@@ -107,7 +114,8 @@ public class NavigatingThroughActions {
 
     @Test
     public void isDefaultChecked() {
-        checkboxForm.open();
+        navigate.to(FormPages.CheckboxForm);
+
         assertThat(checkboxForm.getCheckboxWithLabel("Click on this check box").isSelected()).isFalse();
         assertThat(checkboxForm.getCheckboxWithLabel("Default Checked").isSelected()).isTrue();
         assertThat(checkboxForm.getCheckboxWithLabel("Default Disabled").isSelected()).isTrue();
@@ -117,7 +125,8 @@ public class NavigatingThroughActions {
     @Test
     public void isDisabled() {
 
-        checkboxForm.open();
+        navigate.to(FormPages.CheckboxForm);
+
         assertThat(checkboxForm.getCheckboxWithLabel("Click on this check box").isEnabled()).isTrue();
         assertThat(checkboxForm.getCheckboxWithLabel("Default Checked").isEnabled()).isTrue();
         assertThat(checkboxForm.getCheckboxWithLabel("Default Disabled").isDisabled()).isTrue();
@@ -132,7 +141,7 @@ public class NavigatingThroughActions {
     @Test
     public void radioButtons() {
 
-        radioButtonsForm.open();
+        navigate.to(FormPages.RadioButtonsForm);
 
         radioButtonsForm.getCheckedValue();
         assertThat(radioButtonsForm.getResult()).isEqualTo("Radio button is Not checked");
@@ -151,7 +160,8 @@ public class NavigatingThroughActions {
     @Test
     public void multipleRadioButtons() {
 
-        multipleRadioButtonsForm.open();
+        navigate.to(FormPages.MultipleRadioButtonsForm);
+
         assertThat(multipleRadioButtonsForm.getResult()).isEmpty();
 
         multipleRadioButtonsForm.getValues();
@@ -183,7 +193,7 @@ public class NavigatingThroughActions {
      */
     @Test
     public void selectList() {
-        selectListForm.open();
+        navigate.to(FormPages.SelectListForm);
 
         assertThat(selectListForm.selectedDay()).isEmpty();
         selectListForm.selectDay("Sunday");
@@ -199,7 +209,7 @@ public class NavigatingThroughActions {
     @Test
     public void multiSelectList() {
 
-        multiSelectListForm.open();
+        navigate.to(FormPages.MultiSelectListForm);
 
         assertThat(multiSelectListForm.getSelectedStates()).isEmpty();
         multiSelectListForm.selectStates("Florida", "Ohio", "Texas");
@@ -211,7 +221,7 @@ public class NavigatingThroughActions {
     HoverPage hoverPage;
     @Test
     public void hover() {
-        hoverPage.open();
+        navigate.to(FormPages.HoverPage);
 
         hoverPage.hoverOverFigure(1);
         hoverPage.captionForFigure(1).shouldBeVisible();
@@ -220,7 +230,9 @@ public class NavigatingThroughActions {
 
     @Test
     public void hoverAll() {
-        hoverPage.open();
+
+        navigate.to(FormPages.HoverPage);
+
         List<WebElementFacade> figureList = hoverPage.getFigures();
 
         for (int i = 1; i <= figureList.size(); i++) {

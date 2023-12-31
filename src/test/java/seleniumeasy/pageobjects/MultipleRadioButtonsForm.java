@@ -2,7 +2,7 @@ package seleniumeasy.pageobjects;
 
 import net.serenitybdd.annotations.DefaultUrl;
 
-@DefaultUrl("https://demo.seleniumeasy.com/basic-radiobutton-demo.html")
+
 public class MultipleRadioButtonsForm extends SeleniumEasyForm{
 
     public void selectGender(String gender) {

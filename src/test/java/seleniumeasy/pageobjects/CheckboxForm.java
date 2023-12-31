@@ -8,7 +8,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
  * Use this class as a base class for your page component objects so that the popup window is closed correctly
  * if it appears.
  */
-@DefaultUrl("https://demo.seleniumeasy.com/basic-checkbox-demo.html")
+
 public class CheckboxForm extends SeleniumEasyForm {
 
     public void setAgeSelected() {

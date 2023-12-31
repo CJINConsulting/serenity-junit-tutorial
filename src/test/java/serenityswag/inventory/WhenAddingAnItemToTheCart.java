@@ -47,7 +47,7 @@ public class WhenAddingAnItemToTheCart {
     public void theCorrectItemCountShouldBeShown() {
 
         // check that the shopping cart badge is empty
-        Serenity.reportThat("The shopping cart badge should be empty",
+        Serenity.reportThat("Then the shopping cart badge should be empty",
                 () -> assertThat(cartPage.getCartBadgeCount()).isEmpty()
         );
 
@@ -55,7 +55,7 @@ public class WhenAddingAnItemToTheCart {
         cart.addItem("Sauce Labs Backpack");
 
         // The shopping cart badge should be "1"
-        Serenity.reportThat("The shopping cart badge should now be '1'",
+        Serenity.reportThat("Then the shopping cart badge should now be '1'",
                 () -> assertThat(cartPage.getCartBadgeCount()).isEqualTo("1")
         );
 
@@ -68,7 +68,7 @@ public class WhenAddingAnItemToTheCart {
         int numberOfProducts = selectedItems.size();
 
         // check that the shopping cart badge is empty
-        Serenity.reportThat("The shopping cart badge should be empty",
+        Serenity.reportThat("Then the shopping cart badge should be empty",
                 () -> assertThat(cartPage.getCartBadgeCount()).isEmpty()
         );
 
@@ -77,15 +77,15 @@ public class WhenAddingAnItemToTheCart {
 
         cartPage.open();
 
-        Serenity.reportThat("The shopping cart badge should now be '" + numberOfProducts + "'",
+        Serenity.reportThat("Then the shopping cart badge should now be '" + numberOfProducts + "'",
                 () -> assertThat(cartPage.getCartBadgeCount()).isEqualTo(String.valueOf(selectedItems.size()))
         );
 
-        Serenity.reportThat("The number of items in the cart should be '" + numberOfProducts + "'",
+        Serenity.reportThat("Then the number of items in the cart should be '" + numberOfProducts + "'",
                 () -> assertThat(cart.displayedItems().size()).isEqualTo(selectedItems.size())
         );
 
-        Serenity.reportThat("The shopping cart item names should match the selected items",
+        Serenity.reportThat("Then the shopping cart item names should match the selected items",
                 () -> assertThat(cart.displayedItems()).containsExactlyElementsOf(selectedItems)
         );
     }
@@ -106,7 +106,7 @@ public class WhenAddingAnItemToTheCart {
         // check that each item in the cart has a price
         List<CartItem> items = cartPage.items();
 
-        Serenity.reportThat("The number of items in the cart should be '" + numberOfProducts + "'",
+        Serenity.reportThat("Then the number of items in the cart should be '" + numberOfProducts + "'",
                 () -> assertThat(items)
                         .hasSize(selectedItems.size())
                         .allMatch(item -> item.price() > 0.0)

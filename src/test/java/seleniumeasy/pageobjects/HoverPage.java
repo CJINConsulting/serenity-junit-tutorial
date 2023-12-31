@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-@DefaultUrl("https://the-internet.herokuapp.com/hovers")
+
 public class HoverPage extends PageObject {
 
     public static final String FIGURE_IMAGE = "(//*[@class='figure'])[{0}]";

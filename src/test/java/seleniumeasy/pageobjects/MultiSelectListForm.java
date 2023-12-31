@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import java.util.List;
 
-@DefaultUrl("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html")
+
 public class MultiSelectListForm extends SeleniumEasyForm {
 
     private static final By STATES = By.id("multi-select");

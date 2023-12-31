@@ -8,7 +8,7 @@ import net.serenitybdd.core.pages.PageObject;
  * Use this class as a base class for your page component objects so that the popup window is closed correctly
  * if it appears.
  */
-@DefaultUrl("https://demo.seleniumeasy.com/basic-first-form-demo.html")
+
 public class TwoInputFieldForm extends SeleniumEasyForm {
 
     public void enterA(String value) {

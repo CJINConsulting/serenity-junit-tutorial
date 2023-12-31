@@ -6,7 +6,7 @@ import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import serenityswag.actions.NavigateActions;
+import serenityswag.actions.NavigateSwagActions;
 import serenityswag.actions.SearchActions;
 import serenityswag.pages.SearchResultSidebar;
 
@@ -18,7 +18,7 @@ class WhenSearchingByKeyword {
     @Managed(driver = "chrome")
     WebDriver driver;
 
-    NavigateActions navigate;
+    NavigateSwagActions navigate;
     SearchActions search;
     SearchResultSidebar searchResultSidebar;
 
@@ -27,7 +27,7 @@ class WhenSearchingByKeyword {
         navigate.toTheDuckDuckGoSearchPage();
         search.byKeyword("Cucumber");
 
-        Serenity.reportThat("The keyword should appear in the sidebar heading",
+        Serenity.reportThat("Then the keyword should appear in the sidebar heading",
                 () -> assertThat(searchResultSidebar.heading()).isEqualTo("Cucumber")
         );
     }

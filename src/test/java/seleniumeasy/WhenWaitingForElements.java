@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import seleniumeasy.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class WhenInteractingWithInputForms {
+public class WhenWaitingForElements {
 
     @Managed(driver = "chrome")
     WebDriver driver;
