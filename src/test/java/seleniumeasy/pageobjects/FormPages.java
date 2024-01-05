@@ -3,6 +3,7 @@ package seleniumeasy.pageobjects;
 public enum FormPages {
     AlertMessagePage,
     CheckboxForm,
+    DownloadPage,
     DynamicDataPage,
     HoverPage,
     ModalDialogPage,
