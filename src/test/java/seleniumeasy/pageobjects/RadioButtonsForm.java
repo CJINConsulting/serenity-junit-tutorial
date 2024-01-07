@@ -1,6 +1,6 @@
 package seleniumeasy.pageobjects;
 
-import net.serenitybdd.annotations.DefaultUrl;
+import common.pageobjects.FormButton;
 
 
 public class RadioButtonsForm extends SeleniumEasyForm {

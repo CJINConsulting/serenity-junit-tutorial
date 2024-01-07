@@ -12,7 +12,7 @@ import serenityswag.pages.SearchResultSidebar;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(SerenityJUnit5Extension.class)
+//@ExtendWith(SerenityJUnit5Extension.class)
 class WhenSearchingByKeyword {
 
     @Managed(driver = "chrome")
@@ -30,5 +30,6 @@ class WhenSearchingByKeyword {
         Serenity.reportThat("Then the keyword should appear in the sidebar heading",
                 () -> assertThat(searchResultSidebar.heading()).isEqualTo("Cucumber")
         );
+
     }
 }

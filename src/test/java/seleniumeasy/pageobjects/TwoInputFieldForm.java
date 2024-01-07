@@ -1,8 +1,6 @@
 package seleniumeasy.pageobjects;
 
-
-import net.serenitybdd.annotations.DefaultUrl;
-import net.serenitybdd.core.pages.PageObject;
+import common.pageobjects.FormButton;
 
 /**
  * Use this class as a base class for your page component objects so that the popup window is closed correctly

@@ -13,7 +13,7 @@ import serenityswag.pages.InventoryPage;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static serenityswag.authentication.User.STANDARD_USER;
 
-@ExtendWith(SerenityJUnit5Extension.class)
+//@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenLoggingOn {
     @Managed
     private WebDriver driver;

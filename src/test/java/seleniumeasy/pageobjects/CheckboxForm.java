@@ -1,7 +1,6 @@
 package seleniumeasy.pageobjects;
 
-
-import net.serenitybdd.annotations.DefaultUrl;
+import common.pageobjects.FormCheckbox;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 /**

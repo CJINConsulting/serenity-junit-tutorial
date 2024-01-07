@@ -15,7 +15,7 @@ import serenityswag.pages.ProductListPage;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static serenityswag.authentication.User.STANDARD_USER;
 
-@ExtendWith(SerenityJUnit5Extension.class)
+//@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenViewingHighlightedProducts {
     @Managed
     private WebDriver driver;

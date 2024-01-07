@@ -1,13 +1,12 @@
 package seleniumeasy;
 
+import common.pageobjects.FormPages;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import seleniumeasy.actions.NavigateActions;
+import common.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
 
 import java.util.Arrays;
@@ -20,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Serenity BDD to test various kinds of HTML elements
  */
 
-@ExtendWith(SerenityJUnit5Extension.class)
+//@ExtendWith(SerenityJUnit5Extension.class)
 public class NavigatingThroughActions {
 
     @Managed(driver = "chrome")

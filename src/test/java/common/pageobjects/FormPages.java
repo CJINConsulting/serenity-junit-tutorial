@@ -1,4 +1,4 @@
-package seleniumeasy.pageobjects;
+package common.pageobjects;
 
 public enum FormPages {
     AlertMessagePage,
@@ -12,5 +12,6 @@ public enum FormPages {
     RadioButtonsForm,
     SelectListForm,
     SingleInputFieldForm,
-    TwoInputFieldForm
+    TwoInputFieldForm,
+    ToDoPage
 }

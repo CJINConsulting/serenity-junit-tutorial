@@ -1,7 +1,7 @@
-package seleniumeasy.actions;
+package common.actions;
 
 import net.serenitybdd.core.steps.UIInteractions;
-import seleniumeasy.pageobjects.FormPages;
+import common.pageobjects.FormPages;
 
 public class NavigateActions extends UIInteractions {
 

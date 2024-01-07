@@ -1,7 +1,6 @@
 package seleniumeasy.pageobjects;
 
-
-import net.serenitybdd.annotations.DefaultUrl;
+import common.pageobjects.FormButton;
 import net.serenitybdd.core.pages.PageObject;
 
 /**
@@ -9,7 +8,7 @@ import net.serenitybdd.core.pages.PageObject;
  * if it appears.
  */
 
-public class SingleInputFieldForm extends SeleniumEasyForm {
+public class SingleInputFieldForm extends PageObject {
 
 
     public void enterMessage(String message) {

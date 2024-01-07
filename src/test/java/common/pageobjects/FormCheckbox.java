@@ -1,4 +1,4 @@
-package seleniumeasy.pageobjects;
+package common.pageobjects;
 
 import org.openqa.selenium.By;
 
