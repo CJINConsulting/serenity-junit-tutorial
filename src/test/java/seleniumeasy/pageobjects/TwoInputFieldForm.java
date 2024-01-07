@@ -1,0 +1,27 @@
+package seleniumeasy.pageobjects;
+
+import common.pageobjects.FormButton;
+
+/**
+ * Use this class as a base class for your page component objects so that the popup window is closed correctly
+ * if it appears.
+ */
+
+public class TwoInputFieldForm extends SeleniumEasyForm {
+
+    public void enterA(String value) {
+        $("#value1").type(value);
+    }
+
+    public void enterB(String value) {
+        $("#value2").type(value);
+    }
+
+    public void getTotal() {
+        $(FormButton.withLabel("Get Total")).click();
+    }
+
+    public String displayedTotal() {
+        return $("#displayvalue").getText();
+    }
+}

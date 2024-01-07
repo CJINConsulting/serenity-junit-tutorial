@@ -15,7 +15,7 @@ import serenityswag.pages.ProductListPage;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static serenityswag.authentication.User.STANDARD_USER;
 
-@ExtendWith(SerenityJUnit5Extension.class)
+//@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenViewingHighlightedProducts {
     @Managed
     private WebDriver driver;
@@ -36,7 +36,7 @@ public class WhenViewingHighlightedProducts {
         login.as(STANDARD_USER);
 
         // Should see product catalogue
-        Serenity.reportThat("There are 6 highlighted products on the page",
+        Serenity.reportThat("Then there are 6 highlighted products on the page",
                 () -> assertThat(productList.getProductTitles())
                         .hasSize(6)
                         .contains("Sauce Labs Backpack")
@@ -52,12 +52,12 @@ public class WhenViewingHighlightedProducts {
         productList.openProductDetailsFor(firstItemName);
 
         // Should see product catalogue
-        Serenity.reportThat("The product detail title is correct",
+        Serenity.reportThat("Then the product detail title is correct",
                 () -> assertThat(productDetails.getProductName())
                         .isEqualTo(firstItemName)
         );
 
-        Serenity.reportThat("The product image alt text is correct",
+        Serenity.reportThat("Then the product image alt text is correct",
                 () -> productDetails.getProductImageWithAltValueOf(firstItemName).shouldBeVisible()
         );
     }
@@ -71,12 +71,12 @@ public class WhenViewingHighlightedProducts {
         viewProductDetails.forProductWithName(firstItemName);
 
         // Should see product catalogue
-        Serenity.reportThat("The product detail title is correct",
+        Serenity.reportThat("Then the product detail title is correct",
                 () -> assertThat(productDetails.getProductName())
                         .isEqualTo(firstItemName)
         );
 
-        Serenity.reportThat("The product image alt text is correct",
+        Serenity.reportThat("Then the product image alt text is correct",
                 () -> productDetails.getProductImageWithAltValueOf(firstItemName).shouldBeVisible()
         );
     }

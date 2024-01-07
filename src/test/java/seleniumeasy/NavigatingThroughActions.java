@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 
 //@ExtendWith(SerenityJUnit5Extension.class)
-public class WhenInteractingWithInputForms {
+public class NavigatingThroughActions {
 
     @Managed(driver = "chrome")
     WebDriver driver;
@@ -48,6 +48,7 @@ public class WhenInteractingWithInputForms {
 
     @Test
     public void basicForms() {
+
         navigate.to(FormPages.SingleInputFieldForm);
 
         singleInputFieldForm.enterMessage("Hi there!");
@@ -84,6 +85,7 @@ public class WhenInteractingWithInputForms {
     @Test
     public void singleCheckbox() {
         navigate.to(FormPages.CheckboxForm);
+
         assertThat(checkboxForm.getCheckboxWithLabel("Click on this check box").isSelected()).isFalse();
         checkboxForm.setAgeSelected();
 
@@ -123,6 +125,7 @@ public class WhenInteractingWithInputForms {
     public void isDisabled() {
 
         navigate.to(FormPages.CheckboxForm);
+
         assertThat(checkboxForm.getCheckboxWithLabel("Click on this check box").isEnabled()).isTrue();
         assertThat(checkboxForm.getCheckboxWithLabel("Default Checked").isEnabled()).isTrue();
         assertThat(checkboxForm.getCheckboxWithLabel("Default Disabled").isDisabled()).isTrue();
@@ -157,6 +160,7 @@ public class WhenInteractingWithInputForms {
     public void multipleRadioButtons() {
 
         navigate.to(FormPages.MultipleRadioButtonsForm);
+
         assertThat(multipleRadioButtonsForm.getResult()).isEmpty();
 
         multipleRadioButtonsForm.getValues();
@@ -225,7 +229,9 @@ public class WhenInteractingWithInputForms {
 
     @Test
     public void hoverAll() {
+
         navigate.to(FormPages.HoverPage);
+
         List<WebElementFacade> figureList = hoverPage.getFigures();
 
         for (int i = 1; i <= figureList.size(); i++) {

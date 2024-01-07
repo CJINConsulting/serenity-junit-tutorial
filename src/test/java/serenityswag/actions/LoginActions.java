@@ -9,7 +9,7 @@ import serenityswag.pages.LoginFormPage;
 
 public class LoginActions extends UIInteractionSteps {
 
-    @Step("Log in as {0}")
+    @Step("Login as {0}")
     public void as(User user) {
 
         openUrl("https://www.saucedemo.com/");
